@@ -1,0 +1,322 @@
+# 26 April 2024
+
+## Tree Fruit Kraken 2 Scripts
+
+### kr_apple_reads.slurm
+``` slurm
+#!/bin/bash
+#SBATCH --job-name=kr_apple_reads
+#SBATCH --account=kcooper
+#SBATCH --partition=standard
+#SBATCH --nodes=1
+#SBATCH --ntasks=64
+#SBATCH --time=48:00:00
+#SBATCH --mem-per-cpu=12gb                   
+#SBATCH --mail-type=ALL
+
+module load anaconda/2020
+source ~/.bashrc
+conda activate kraken2-env
+cd /xdisk/kcooper/caparicio/tree-fruit
+
+for file in 01c_fastp_reads/*_1.trimmed.fastq
+do
+    # Extract the base name of the file (without _1.trimmed.fastq)
+    base=$(basename $file _1.trimmed.fastq)
+
+    # Process only files with "apples" in the base name
+    if [[ $base != *"apples"* ]]; then
+        continue
+    fi
+
+    # Define input files
+    file1="01c_fastp_reads/${base}_1.trimmed.fastq"
+    file2="01c_fastp_reads/${base}_2.trimmed.fastq"
+
+    # Define output files and temporary files
+    output="04a_reads_kraken2/${base}_output.txt"
+    temp_output="04a_reads_kraken2/${base}_output.tmp"
+    report="04a_reads_kraken2/${base}_report.txt"
+    temp_report="04a_reads_kraken2/${base}_report.tmp"
+
+    # Check if output files from previous run exist and are incomplete, then remove them
+    if [ -f "$output" ] || [ -f "$report" ]; then
+        echo "Incomplete or previous output files found for $base. Removing..."
+        rm -f "$output" "$report"
+    fi
+
+    # Run Kraken2 with temporary output files
+    kraken2 --db /xdisk/kcooper/kcooper/database/Kraken_Special_DB \
+            --confidence 0.1 \
+            --report-minimizer-data \
+            --output $temp_output \
+            --paired \
+            --report $temp_report \
+            --memory-mapping \
+            --use-names \
+            $file1 \
+            $file2
+
+    # Check if Kraken2 ran successfully and rename temporary files
+    if [ $? -eq 0 ]; then
+        mv "$temp_output" "$output"
+        mv "$temp_report" "$report"
+    else
+        echo "Kraken2 failed for $base. Temporary files not renamed."
+    fi
+done
+```
+### kr_orange_reads.slurm
+``` slurm
+#!/bin/bash
+#SBATCH --job-name=kr_orange_reads
+#SBATCH --account=kcooper
+#SBATCH --partition=standard
+#SBATCH --nodes=1
+#SBATCH --ntasks=64
+#SBATCH --time=24:00:00
+#SBATCH --mem-per-cpu=20gb
+#SBATCH --mail-type=ALL
+
+module load anaconda/2020
+source ~/.bashrc
+conda activate kraken2-env
+
+DB_PATH="/xdisk/kcooper/kcooper/database/Kraken_Special_DB"
+cd /xdisk/kcooper/caparicio/tree-fruit
+OUTPUT_DIR="04a_reads_kraken2"
+INPUT_DIR="01c_fastp_reads"
+THREADS=46
+CONFIDENCE=0.1
+REPORT_FILE="${OUTPUT_DIR}/kraken2_report.txt"
+CHECKPOINT_FILE="${OUTPUT_DIR}/checkpoint.txt"
+
+# Automated cleanup to ensure a clean slate before starting processing
+echo "Cleaning up incomplete files..."
+find ${OUTPUT_DIR} -name '*.tmp' -delete
+
+# Loop through files, skipping those already processed
+for file in ${INPUT_DIR}/*oranges*1.trimmed.fastq; do
+    file_base=$(basename $file _1.trimmed.fastq)
+
+    # Skip files processed in previous runs
+    if [[ "$LAST_PROCESSED" > "$file_base" ]]; then
+        continue
+    fi
+
+    paired_file="${INPUT_DIR}/${file_base}_2.trimmed.fastq"
+    temp_output_file="${OUTPUT_DIR}/k2_${file_base}_output.txt.tmp"
+    temp_report_file="${OUTPUT_DIR}/k2_${file_base}_report.txt.tmp"
+    final_output_file="${OUTPUT_DIR}/k2_${file_base}_output.txt"
+    final_report_file="${OUTPUT_DIR}/k2_${file_base}_report.txt"
+
+    # Run Kraken2, directing output to temporary files, including minimizer data in the report
+    kraken2 --db $DB_PATH \
+            --paired $file $paired_file \
+            --output $temp_output_file \
+            --report $temp_report_file \
+            --report-minimizer-data \
+            --memory-mapping \
+            --use-names \
+            --threads $THREADS \
+            --confidence $CONFIDENCE && {
+        mv $temp_output_file $final_output_file
+        mv $temp_report_file $final_report_file
+        echo $file_base >> $CHECKPOINT_FILE
+    } || {
+        echo "Kraken 2 processing failed for $file_base. Cleaning up..."
+        rm -f $temp_output_file $temp_report_file
+    }
+done
+
+# Concatenate all individual reports into a comprehensive report
+cat ${OUTPUT_DIR}/*_report.txt.tmp > $REPORT_FILE
+
+# Cleanup checkpoint file and temporary reports after successful run
+rm -f $CHECKPOINT_FILE
+rm -f ${OUTPUT_DIR}/*_report.txt.tmp
+```
+### kr_peach_reads.slurm
+``` slurm
+#!/bin/bash
+#SBATCH --job-name=kr_peach_reads
+#SBATCH --account=kcooper
+#SBATCH --partition=standard
+#SBATCH --nodes=1
+#SBATCH --ntasks=60
+#SBATCH --time=24:00:00
+#SBATCH --mem-per-cpu=20gb
+#SBATCH --mail-type=ALL
+
+module load anaconda/2020
+source ~/.bashrc
+conda activate kraken2-env
+
+DB_PATH="/xdisk/kcooper/kcooper/database/Kraken_Special_DB"
+cd /xdisk/kcooper/caparicio/tree-fruit
+OUTPUT_DIR="04a_reads_kraken2"
+INPUT_DIR="01c_fastp_reads"
+THREADS=46
+CONFIDENCE=0.1
+REPORT_FILE="${OUTPUT_DIR}/kraken2_report.txt"
+CHECKPOINT_FILE="${OUTPUT_DIR}/checkpoint.txt"
+
+# Automated cleanup to ensure a clean slate before starting processing
+echo "Cleaning up incomplete files..."
+find ${OUTPUT_DIR} -name '*.tmp' -delete
+
+# Loop through files, skipping those already processed
+for file in ${INPUT_DIR}/*peaches*1.trimmed.fastq; do
+    file_base=$(basename $file _1.trimmed.fastq)
+
+    # Skip files processed in previous runs
+    if [[ "$LAST_PROCESSED" > "$file_base" ]]; then
+        continue
+    fi
+
+    paired_file="${INPUT_DIR}/${file_base}_2.trimmed.fastq"
+    temp_output_file="${OUTPUT_DIR}/k2_${file_base}_output.txt.tmp"
+    temp_report_file="${OUTPUT_DIR}/k2_${file_base}_report.txt.tmp"
+    final_output_file="${OUTPUT_DIR}/k2_${file_base}_output.txt"
+    final_report_file="${OUTPUT_DIR}/k2_${file_base}_report.txt"
+
+    # Run Kraken2, directing output to temporary files, including minimizer data in the report
+    kraken2 --db $DB_PATH \
+            --paired $file $paired_file \
+            --output $temp_output_file \
+            --report $temp_report_file \
+            --report-minimizer-data \
+            --memory-mapping \
+            --use-names \
+            --threads $THREADS \
+            --confidence $CONFIDENCE && {
+        mv $temp_output_file $final_output_file
+        mv $temp_report_file $final_report_file
+        echo $file_base >> $CHECKPOINT_FILE
+    } || {
+        echo "Kraken 2 processing failed for $file_base. Cleaning up..."
+        rm -f $temp_output_file $temp_report_file
+    }
+done
+
+# Concatenate all individual reports into a comprehensive report
+cat ${OUTPUT_DIR}/*_report.txt.tmp > $REPORT_FILE
+
+# Cleanup checkpoint file and temporary reports after successful run
+rm -f $CHECKPOINT_FILE
+rm -f ${OUTPUT_DIR}/*_report.txt.tmp
+```
+***
+## Using Mamba/Conda in Jupyter
+<a href="https://uarizona.atlassian.net/wiki/spaces/UAHPC/pages/75989933/GUI+Jobs" target="_blank">HPC GUI Jobs</a>
+Configuring the Jupyter environment to use kraken2, for example:
+1. **Log into an Interactive Terminal Session**  
+Access the OOD Application and launch an interactive terminal session.
+2. **Load Anaconda Module**  
+In the interactive terminal, load the Anaconda module to ensure you have access to the `conda` command:  
+``` bash
+module load anaconda/2020
+```
+3. **Activate the Kraken 2 Conda Environment**  
+``` bash
+conda activate kraken2-env
+```
+4. **Install IPython Kernel (if not already installed)**  
+Ensure that the IPython kernel is installed in your `kraken2-env` to make it available to Jupyter:
+``` bash
+conda install ipykernel
+```
+5. **Add the Kraken 2 Environment as a Jupyter Kernel**  
+Use the `ipykernel` package to create a new Jupyter kernel for the `kraken2-env`:
+``` bash
+python -m ipykernel install --user --name kraken2-env --display-name "Python (kraken2-env)"
+```
+6. **Close the Interactive Terminal**  
+After adding the kernel, you can close the interactive terminal session.
+
+7. **Restart Your Jupyter Session**  
+Log out and then log back into your Jupyter session to refresh the kernel list.
+
+8. **Select the New Kernel from the "New" Dropdown Menu**  
+When starting a new notebook, select the "Python (kraken2-env)" kernel from the "new" dropdown menu to use your custom environment.
+
+These steps ensure that your `kraken2-env` is available as a kernel in Jupyter notebooks, allowing you to manage the Python version and access Kraken 2 and other custom environments or software applications installed within that environment.
+
+Once you've created an IPython kernel for your `kraken2-env` environment, the new kernel becomes a permanent option in the Jupyter Notebook interface.
+### How It Works
+By running `ipykernel install --user --name kraken2-env --display-name "Python (kraken2-env)"`, a JSON file for this kernel is created in your Jupyter kernels directory (typically `.local/share/jupyter/kernels/kraken2-env/` for a user installation on Unix-like systems). This JSON file contains the metadata necessary for Jupyter to identify and launch the kernel, including the path to the Python executable within the activated conda environment.
+### Ensuring the Kernel Appears in Subsequent Sessions
+- **Permanent User Option**: As long as the kernel's JSON configuration file remains in the appropriate directory and points to a valid Python executable within an accessible conda environment, it will appear as an option every time you start a Jupyter Notebook server from any location on the same system/user account.
+- **Recalling the Kernel**: No special procedures are needed to recall or select the kernel for future Jupyter Notebook sessions. Start your Jupyter Notebook server as usual, and when creating a new notebook (or opening an existing one), select the “Python (kraken2-env)” kernel from the Kernel menu or the "new" dropdown menu to start a notebook with that environment.
+### If the Kernel Doesn't Appear
+- **Environment Changes**: If the kernel doesn't appear, ensure the `kraken2-env` environment and its IPython kernel installation haven't been altered or deleted.
+- **Jupyter Configuration**: Check your Jupyter configuration and ensure it's scanning the correct directories for kernel specifications. Running `jupyter kernelspec list` in the terminal will show you the paths to the kernels available.
+- **Reinstall the Kernel**: If necessary, reinstall the kernel from within your `kraken2-env` environment using the same `ipykernel install` command as before.
+
+Once installed, the `kraken2-env` kernel will be a persistent option for future Jupyter sessions, providing a straightforward way to work within a customized environment with no need to perform additional setup each time.
+***
+## Execute Shell Commands in Jupyter
+- <a href="https://github.com/clizarraga-UAD7/Workshops/wiki/The-Command-Line-Interface-Shell" target="_blank">Dr. Lizárraga's Command Line Interface Shell</a>
+- <a href="https://jupyter-notebook.readthedocs.io/en/v6.4.8/notebook.html" target="_blank">The Jupyter Notebook</a>
+- <a href="https://github.com/ua-datalab/Workshops/wiki/Jupyter-Notebooks" target="_blank">Data Lab's Jupyter Notebooks</a>
+- <a href="https://www.youtube.com/watch?v=QrbwPK5OWqA" target="_blank">Data Lab's [2024 Spring] Data Science Essentials Series - Introduction to Jupyter Notebooks YouTube</a>
+- <a href="https://jupyterbook.org/en/stable/start/overview.html" target="_blank">Install Jupyter Book</a> via <a href="https://foss.cyverse.org/04_documentation_communication" target="_blank">CyVerse Foundational Open Science Skills 2024
+  Documentation & Communication</a>
+- <a href="https://www.youtube.com/watch?v=aIr0bFifu-Y" target="_blank">HPC: Jupyter in Singularity YouTube</a>
+- <a href="https://www.youtube.com/watch?v=RxXrV45Csks" target="_blank">AnacondaTFJupyter YouTube</a>
+- <a href="https://www.youtube.com/watch?v=RQxZcNRVh3M" target="_blank">CyVerse Webinar: Writing and Sharing Computational Analyses in Jupyter Notebooks YouTube</a>
+
+ERROR: Indicates an attempt to execute shell commands in a Python environment within a Jupyter notebook. Python requires specific formatting to understand bash/shell syntax for executing shell commands.
+Two options to resolve issue in Jupyter notebook cell:
+### Option 1: Use IPython Magic Command for Shell Execution
+IPython, upon which Jupyter notebooks are based, provides magic commands that extend the normal Python syntax. For running shell commands, use the `!` prefix or the `%%bash` cell magic for multi-line shell scripts.
+#### Applying `!` for Single Line Commands:
+To execute single-line shell commands, start the command with `!`:
+``` py
+!echo "Cleaning up incomplete files..."
+```
+#### Using `%%bash` for Multi-line Scripts:
+For multi-line scripts, use the `%%bash` magic at the beginning of the cell. This tells Jupyter that the entire cell contains bash commands:
+``` bash
+%%bash
+# Define directories
+OUTPUT_DIR="your/output/dir"
+
+# Function to clean up incomplete or corrupted files
+cleanup() {
+    echo "Cleaning up incomplete files..."
+    find ${OUTPUT_DIR} -name '*.tmp' -delete
+}
+
+# Automated cleanup at start to ensure a clean slate
+cleanup
+```
+Note: Ensure that `OUTPUT_DIR` is set to the correct directory path where your output files are stored.
+### Option 2: Use Python to Perform the Same Task
+Alternatively, translate bash functions into Python to accomplish same, leveraging Python's `os` and `glob` modules for directory and file operations:
+``` py
+import os
+import glob
+
+# Define directories
+OUTPUT_DIR = "your/output/dir"
+
+def cleanup():
+    print("Cleaning up incomplete files...")
+    for tmp_file in glob.glob(os.path.join(OUTPUT_DIR, '*.tmp')):
+        os.remove(tmp_file)
+
+# Automated cleanup at start to ensure a clean slate
+cleanup()
+```
+This Python version accomplishes as the bash script above, but in Jupyter notebook's native Python environment.
+***
+## Sample Tracker
+{{ read_csv(240426sample_tracker.csv) }}
+
+document$.subscribe(function() {
+  var tables = document.querySelectorAll("article table:not([class])")
+  tables.forEach(function(table) {
+    new Tablesort(table)
+  })
+})

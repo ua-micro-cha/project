@@ -9,8 +9,14 @@ edit_uri: edit/main/docs/
 
 copyright: Copyright © 2024
 
+plugins:
+  - search
+  - table-reader
+
 theme:
   name: material
+  icon:
+    logo: material/github  
   features:
     - navigation.path
     - navigation.indexes
@@ -22,20 +28,20 @@ theme:
     - content.code.copy
   language: en
   palette: 
-    # Palette toggle for light mode
-    - scheme: default
-      toggle:
-        icon: material/brightness-7 
-        name: Switch to dark mode
-
     # Palette toggle for dark mode
     - scheme: slate
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
 
-markdown_extensions:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
 
+markdown_extensions:
+  - tables
   # Python Markdown
   - abbr
   - admonition
@@ -66,4 +72,9 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
-  - pymdownx.tilde
+  - pymdownx.tildey
+
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
+

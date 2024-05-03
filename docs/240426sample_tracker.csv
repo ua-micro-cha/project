@@ -1,0 +1,44 @@
+﻿sample(s),stage,program,status,queue time,cluster,run time hrs:min,Job #,ntaskts (CPU -t),Mem,-m,file location,script,script location
+,,,queue,4/24/2024,puma,24,9673002,62,20,1240,,jupyter,
+apples313,alignment,blast,queue,4/23/2024,puma,24,9670368,62,20,1240,/kcooper/caparicio/tree-fruit/07a_reads_blast,apple_blast.ipynb,/kcooper/caparicio/tree-fruit/07batch
+tree fruit,biom file,kraken-biom,queue,4/23/2024,puma,12,9666325,42,20,840,/kcooper/caparicio/tree-fruit/05_kraken-biom,interactive,/kcooper/caparicio/tree-fruit/05batch
+apples313,arg,deeparg,queue,4/22/2024,puma,24,9661323,62,20,1240,/kcooper/caparicio/tree-fruit/09_deeparg,apple_deeparg.ipynb,/kcooper/caparicio/tree-fruit/09batch
+apples313,arg,deeparg,in progress,1-22:16:37,puma,24,9607499,62,20,1240,/kcooper/caparicio/tree-fruit/09_deeparg,apple_deeparg.ipynb,/kcooper/caparicio/tree-fruit/09batch
+apples313,arg,deeparg,in progress,1-22:16:37,puma,24,9607499,62,20,1240,/kcooper/caparicio/tree-fruit/09_deeparg,apple_deeparg.ipynb,/kcooper/caparicio/tree-fruit/09batch
+apples313,alignment,blast,in progress,2-13:54:46,puma,24,9544144,62,20,1240,/kcooper/caparicio/tree-fruit/07a_reads_blast,apple_blast.ipynb,/kcooper/caparicio/tree-fruit/07batch
+apples313,alignment,blast,in progress,2-18:24:00,puma,24,9532276,62,20,1240,/kcooper/caparicio/tree-fruit/07a_reads_blast,apple_blast.ipynb,/kcooper/caparicio/tree-fruit/07batch
+apples313,alignment,blast,in progress,0:02:11,puma,24,9514722,62,20,1240,/kcooper/caparicio/tree-fruit/07a_reads_blast,apple_blast.ipynb,/kcooper/caparicio/tree-fruit/07batch
+apple,assembly,metaSPAdes (SPAdes),queue,,puma,48,9678741,64,25,1600,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch apple_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+peach,assembly,metaSPAdes (SPAdes),queue,,puma,48,9659598,62,20,1240,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch peach_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+orange,assembly,metaSPAdes (SPAdes),queue,,puma,48,9656556,62,20,1240,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch orange_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+apple,assembly,metaSPAdes (SPAdes),in progress,1-09:33:21,puma,48,9656539,62,20,1240,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch apple_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+peach,assembly,metaSPAdes (SPAdes),in progress,1-13:59:27,puma,48,9659598,62,20,1240,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch peach_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+apple,assembly,metaSPAdes (SPAdes),in progress,1-01:53:22,puma,48,9626829,62,20,1240,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch apple_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+orange,assembly,metaSPAdes (SPAdes),in progress,1-20:23:44,puma,48,9607486,62,20,1240,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch orange_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+peach,assembly,metaSPAdes (SPAdes),in progress,2-07:44:37,puma,0:00,9569668,62,20,1240,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch peach_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+apple,assembly,metaSPAdes (SPAdes),in progress,2-01:55:18,puma,48,9569667,62,20,1240,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch apple_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+peach,assembly,metaSPAdes (SPAdes),in progress,8-12:40:52,puma,48,9481898,64,20,1280,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch peach_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+orange,assembly,metaSPAdes (SPAdes),in progress,1-22:23:40,puma,48,9544142,62,20,1240,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch orange_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+apple,assembly,metaSPAdes (SPAdes),in progress,5-01:30:51,puma,48,9510852,60,20,1200,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch apple_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+orange,assembly,metaSPAdes (SPAdes),in progress,8-07:36:36,puma,48,9455659,64,20,1280,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch orange_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+apple,assembly,metaSPAdes (SPAdes),in progress,9-19:56:59,puma,0:00,9475436,64,20,1280,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch apple_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+apple,assembly,metaSPAdes (SPAdes),in progress,9-10:02:53,puma,48,9452625,64,20,1280,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch apple_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+apple,assembly,metaSPAdes (SPAdes),in progress, 9-20:30:02,puma,48,9448076,62,20,1240,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch apple_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+orange,taxonomic class,kraken 2,complete,9-06:30:40,puma,24,9444742,64,20,1280,cd /xdisk/kcooper/caparicio/tree-fruit/03a_reads_kraken2,kr_orange_reads.ipynb,cd /xdisk/kcooper/caparicio/tree-fruit/03batch
+peach,taxonomic class,kraken 2,complete,10-03:45:32,puma,24,9444741,64,20,1280,cd /xdisk/kcooper/caparicio/tree-fruit/03a_reads_kraken2,sbatch kr_peach_reads.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/03batch
+orange,taxonomic class,kraken 2,in progress,,puma,24,9431841,64,20,1280,cd /xdisk/kcooper/caparicio/tree-fruit/03a_reads_kraken2,sbatch kr_orange_reads.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/03batch
+apple,assembly,metaSPAdes (SPAdes),in progress,,puma,0:00,9448076,64,20,1280,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,apple_read_assembly.ipynb,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+apple,assembly,metaSPAdes (SPAdes),REDOcompleteBUT NO FASTA,,puma,48,9004247,64,var,var,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch apples_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+YumaHarvC10-YumaSoil633,poly-g removal,fastp,debug,,puma,0:00,9398738,64,20,1280,cd /xdisk/kcooper/caparicio/MELONS/01c_fastp_reads2,melon_fastp.ipynb melon_soil_fastp.ipynb,cd /xdisk/kcooper/caparicio/MELONS/
+orange,taxonomic class,kraken 2,,,puma,24,9245197,64,32,2048,cd /xdisk/kcooper/caparicio/tree-fruit/03a_reads_kraken2,sbatch kr_orange_reads.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/03batch
+peach,taxonomic class,kraken 2,debug,,puma,24,9245195,64,32,2048,cd /xdisk/kcooper/caparicio/tree-fruit/03a_reads_kraken2,sbatch kr_peach_reads.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/03batch
+melon,poly-g removal,fastp,debug,,puma,24,9247470,48,4,192,cd /xdisk/kcooper/caparicio/MELONS/01c_fastp_reads,sbatch melon_fastp.slurm,cd /xdisk/kcooper/caparicio/MELONS/
+melon soil,poly-g removal,fastp,in progress,,puma,24,9247471,48,4,192,cd /xdisk/kcooper/caparicio/tree-fruit/03a_reads_kraken2,sbatch melon_soil_fastp.slurm,cd /xdisk/kcooper/caparicio/MELONS/
+tree-fruit,poly-g removal,fastp,complete,,puma,0:55,8662642,48,4,192,cd /xdisk/kcooper/caparicio/tree-fruit/01c_fastp_reads,sbatch fruit_01c_fastp.slurm,cd /xdisk/kcooper/caparicio/tree-fruit
+melon/soil,poly-g removal,fastp,debug,,puma,528,9132669,48,4,192,cd /xdisk/kcooper/caparicio/MELONS/01c_fastp_reads,sbatch melon_fastp.slurm,cd /xdisk/kcooper/caparicio/MELONS
+apple,assembly,metaSPAdes (SPAdes),REDOcompleteBUT NO FASTA,,puma,48,9004247,64,var,var,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch apples_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+peach,assembly,metaSPAdes (SPAdes),killed,,ocelote,972,2757752,28,var,var,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch peach_assem.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+orange,assembly,metaSPAdes (SPAdes),killed,,elgato,144,1777319,16,var,var,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch oranges_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+orange,assembly,metaSPAdes (SPAdes),killed,,elgato,144,1777319,16,var,var,cd /xdisk/kcooper/caparicio/tree-fruit/02assembly,sbatch oranges_assembly.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/02batch
+apple,taxonomic class,kraken 2,complete,,puma,48,9016680,64,12,768,cd /xdisk/kcooper/caparicio/tree-fruit/03a_reads_kraken2,sbatch kr_apple_reads.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/03batch
+tree fruit,fastq to fasta,seqtk,complete,,elgato,0:35,1803380,8,4,32,cd /xdisk/kcooper/caparicio/tree-fruit/01d_fasta,sbatch tree-fruit_fasta.slurm,cd /xdisk/kcooper/caparicio/tree-fruit/01d_fasta

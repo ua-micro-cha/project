@@ -1,17 +1,23 @@
-# Welcome to MkDocs
+# Fruit Surface and Soil Microbiome Project
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Overview
 
-## Commands
+Welcome to the live journal, a.k.a. raw notes dump, for the Fruit Surface and Soil Microbiome Project. This page is a hub for documenting our research and learning opportunities.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## Objective
 
-## Project layout
+The goal of this page is to maintain an organized, chronological archive of raw notes and observations that arise during this project. It will assist in tracking the development of our methodologies and the evolution of our data analysis strategies, ensuring reproducibility and continuous improvement in our research practices.
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Structure
+
+Journal entries include, but are not limited to:
+
+- Bioinformatics Workflow: Drafts of code, error logs, successful scripts, and version updates
+- Educational Activities: Insights and key takeaways from Project-related seminars, workshops, and training sessions
+- Literature Insights: Recent studies, relevant scientific literature, and metagenomic tools that may inform and drive our research forward
+
+## Navigation
+
+Notes are categorized by date and are searchable. Each entry is written to provide quick insights into the challenges and solutions employed, offering a transparent view of the bioinformatics analysis happenings.
+
+Please share any suggestions or ideas to enhance the clarity and effectiveness of this page.
