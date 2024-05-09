@@ -23,5 +23,16 @@ jobs:
         run: pip list
       - name: Log environment paths
         run: |
+
+stages:
+  - deploy
+
+deploy_job:
+  stage: deploy
+  script:
+    - pip install -r requirements.txt
+    - mkdocs gh-deploy --force
+  variables:
+    GIT_DEPTH: 0  # Fetch all branches and tags        
           echo "Python location: $(which python)"
           echo "MkDocs location: $(which mkdocs)"
