@@ -36,3 +36,13 @@ deploy_job:
     GIT_DEPTH: 0  # Fetch all branches and tags        
           echo "Python location: $(which python)"
           echo "MkDocs location: $(which mkdocs)"
+
+pipelines:
+  default:
+    - step:
+        name: Deploy
+        script:
+          - pip install -r requirements.txt
+          - mkdocs gh-deploy --force
+        clone:
+          depth: full  # Ensures the full repository is cloned
