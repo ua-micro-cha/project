@@ -12,7 +12,20 @@ copyright: Copyright © 2024
 plugins:
   - search
   - table-reader
-  - optimize
+
+  # CI=1 mkdocs build
+  - group:
+      enabled: !ENV CI
+      plugins:
+        - git-revision-date-localized
+        - git-committers
+
+  # INSIDERS=1 mkdocs buildS
+  - group:
+      enabled: !ENV INSIDERS
+      plugins:
+        - optimize
+        - privacy
 
 theme:
   name: material
