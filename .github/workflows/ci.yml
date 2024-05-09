@@ -1,8 +1,8 @@
-name: ci 
+name: ci
 on:
   push:
     branches:
-      - master 
+      - master
       - main
 permissions:
   contents: write
@@ -13,11 +13,16 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
-          python-version: 3.x
+          python-version: 3.12.3  # Specify the exact Python version if possible to match local and CI environments
       - uses: actions/cache@v2
         with:
           key: ${{ github.ref }}
           path: .cache
-      - run: pip install mkdocs-material
-      - run: pip install pillow cairosvg
-      - run: mkdocs gh-deploy --force
+      - name: Install dependencies  # Ensuring all dependencies are installed from a requirements file
+        run: pip install -r requirements.txt
+      - name: Log environment details  # Logging detailed environment information to debug issues
+        run: |
+          python -m pip list
+          which python
+          which mkdocs
+      - run: mkdocs gh-deploy --force  # Deploying MkDocs site
