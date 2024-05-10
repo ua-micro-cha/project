@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#26-april-2024" class="md-skip">
+        <a href="#10-may-2024" class="md-skip">
           Skip to content
         </a>
       
@@ -334,37 +334,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tree-fruit-kraken-2-scripts" class="md-nav__link">
+  <a href="#tree-fruit-metaspades-assembly-scripts" class="md-nav__link">
     <span class="md-ellipsis">
-      Tree Fruit Kraken 2 Scripts
+      Tree Fruit metaSPAdes Assembly Scripts
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Tree Fruit Kraken 2 Scripts">
+    <nav class="md-nav" aria-label="Tree Fruit metaSPAdes Assembly Scripts">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#kr_apple_readsslurm" class="md-nav__link">
+  <a href="#apple_assemblyslurm" class="md-nav__link">
     <span class="md-ellipsis">
-      kr_apple_reads.slurm
+      apple_assembly.slurm
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#kr_orange_readsslurm" class="md-nav__link">
+  <a href="#orange_assemblyslurm" class="md-nav__link">
     <span class="md-ellipsis">
-      kr_orange_reads.slurm
+      orange_assembly.slurm
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#kr_peach_readsslurm" class="md-nav__link">
+  <a href="#peach_assemblyslurm" class="md-nav__link">
     <span class="md-ellipsis">
-      kr_peach_reads.slurm
+      peach_assembly.slurm
     </span>
   </a>
   
@@ -547,37 +547,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tree-fruit-kraken-2-scripts" class="md-nav__link">
+  <a href="#tree-fruit-metaspades-assembly-scripts" class="md-nav__link">
     <span class="md-ellipsis">
-      Tree Fruit Kraken 2 Scripts
+      Tree Fruit metaSPAdes Assembly Scripts
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Tree Fruit Kraken 2 Scripts">
+    <nav class="md-nav" aria-label="Tree Fruit metaSPAdes Assembly Scripts">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#kr_apple_readsslurm" class="md-nav__link">
+  <a href="#apple_assemblyslurm" class="md-nav__link">
     <span class="md-ellipsis">
-      kr_apple_reads.slurm
+      apple_assembly.slurm
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#kr_orange_readsslurm" class="md-nav__link">
+  <a href="#orange_assemblyslurm" class="md-nav__link">
     <span class="md-ellipsis">
-      kr_orange_reads.slurm
+      orange_assembly.slurm
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#kr_peach_readsslurm" class="md-nav__link">
+  <a href="#peach_assemblyslurm" class="md-nav__link">
     <span class="md-ellipsis">
-      kr_peach_reads.slurm
+      peach_assembly.slurm
     </span>
   </a>
   
@@ -723,213 +723,163 @@
   
 
 
-<h1 id="26-april-2024">26 April 2024<a class="headerlink" href="#26-april-2024" title="Permanent link">&para;</a></h1>
-<h2 id="tree-fruit-kraken-2-scripts">Tree Fruit Kraken 2 Scripts<a class="headerlink" href="#tree-fruit-kraken-2-scripts" title="Permanent link">&para;</a></h2>
-<p><a href="https://hpcdocs.static.arizona.edu/running_jobs/batch_jobs/submitting_jobs" target="_blank">Submitting Batch Jobs</a>
-- Open the slurm script directory in the terminal.
-- Submit the script using the <code>sbatch</code> command:
-<div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>kr_orange_reads.slurm
-</code></pre></div></p>
-<h3 id="kr_apple_readsslurm">kr_apple_reads.slurm<a class="headerlink" href="#kr_apple_readsslurm" title="Permanent link">&para;</a></h3>
+<h1 id="10-may-2024">10 May 2024<a class="headerlink" href="#10-may-2024" title="Permanent link">&para;</a></h1>
+<h2 id="tree-fruit-metaspades-assembly-scripts">Tree Fruit metaSPAdes Assembly Scripts<a class="headerlink" href="#tree-fruit-metaspades-assembly-scripts" title="Permanent link">&para;</a></h2>
+<p>Run Time = 24 ; Core count on a single node = 64 ; Memory per core = 20
+<a class="glightbox" href="../assets/apple_assembly.ipynb" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Apple metaSPAdes Assembly Jupyter Notebook" src="../assets/apple_assembly.ipynb" /></a></p>
+<p>Run Time = 24 ; Core count on a single node = 62 ; Memory per core = 20
+<a class="glightbox" href="../assets/orange_assembly.ipynb" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Orange metaSPAdes Assembly Jupyter Notebook" src="../assets/orange_assembly.ipynb" /></a></p>
+<p>Run Time = 24 ; Core count on a single node = 62 ; Memory per core = 20
+<a class="glightbox" href="../assets/peach_assembly.ipynb" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Peach metaSPAdes Assembly Jupyter Notebook" src="../assets/peach_assembly.ipynb" /></a></p>
+<h3 id="apple_assemblyslurm">apple_assembly.slurm<a class="headerlink" href="#apple_assemblyslurm" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="kp">#SBATCH --job-name=kr_apple_reads</span>
+<span class="kp">#SBATCH --job-name=apple_assembly</span>
 <span class="kp">#SBATCH --account=kcooper</span>
 <span class="kp">#SBATCH --partition=standard</span>
 <span class="kp">#SBATCH --nodes=1</span>
 <span class="kp">#SBATCH --ntasks=64</span>
+<span class="kp">#SBATCH --cpus-per-task=1</span>
 <span class="kp">#SBATCH --time=48:00:00</span>
-<span class="kp">#SBATCH --mem-per-cpu=12gb                   </span>
+<span class="kp">#SBATCH --mem-per-cpu=25gb    </span>
 <span class="kp">#SBATCH --mail-type=ALL</span>
 
-module<span class="w"> </span>load<span class="w"> </span>anaconda/2020
-<span class="nb">source</span><span class="w"> </span>~/.bashrc
-conda<span class="w"> </span>activate<span class="w"> </span>kraken2-env
-<span class="nb">cd</span><span class="w"> </span>/xdisk/kcooper/caparicio/tree-fruit
+module<span class="w"> </span>load<span class="w"> </span>spades
+<span class="nb">cd</span><span class="w"> </span>/xdisk/kcooper/caparicio/tree-fruit/
 
-<span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>01c_fastp_reads/*_1.trimmed.fastq
-<span class="k">do</span>
-<span class="w">    </span><span class="c1"># Extract the base name of the file (without _1.trimmed.fastq)</span>
-<span class="w">    </span><span class="nv">base</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="nv">$file</span><span class="w"> </span>_1.trimmed.fastq<span class="k">)</span>
+<span class="nv">files1</span><span class="o">=(</span>01c_fastp_reads/*apples*_1.trimmed.fastq<span class="o">)</span>
 
-<span class="w">    </span><span class="c1"># Process only files with &quot;apples&quot; in the base name</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$base</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span>*<span class="s2">&quot;apples&quot;</span>*<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">        </span><span class="k">continue</span>
-<span class="w">    </span><span class="k">fi</span>
+<span class="k">for</span><span class="w"> </span>f1<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">files1</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nv">f2</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">f1</span><span class="p">/_1.trimmed.fastq/_2.trimmed.fastq</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nv">sample_name</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$f1</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;_1.trimmed.fastq&quot;</span><span class="k">)</span>
+<span class="w">    </span><span class="nv">output_dir</span><span class="o">=</span><span class="s2">&quot;02_assembly/</span><span class="si">${</span><span class="nv">sample_name</span><span class="si">}</span><span class="s2">&quot;</span>
 
-<span class="w">    </span><span class="c1"># Define input files</span>
-<span class="w">    </span><span class="nv">file1</span><span class="o">=</span><span class="s2">&quot;01c_fastp_reads/</span><span class="si">${</span><span class="nv">base</span><span class="si">}</span><span class="s2">_1.trimmed.fastq&quot;</span>
-<span class="w">    </span><span class="nv">file2</span><span class="o">=</span><span class="s2">&quot;01c_fastp_reads/</span><span class="si">${</span><span class="nv">base</span><span class="si">}</span><span class="s2">_2.trimmed.fastq&quot;</span>
+<span class="w">    </span><span class="c1"># Ensure a clean start by cleaning any previous run data</span>
+<span class="w">    </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="si">${</span><span class="nv">output_dir</span><span class="p">:?</span><span class="si">}</span>/*<span class="w">  </span><span class="c1"># Clear directory properly</span>
 
-<span class="w">    </span><span class="c1"># Define output files and temporary files</span>
-<span class="w">    </span><span class="nv">output</span><span class="o">=</span><span class="s2">&quot;04a_reads_kraken2/</span><span class="si">${</span><span class="nv">base</span><span class="si">}</span><span class="s2">_output.txt&quot;</span>
-<span class="w">    </span><span class="nv">temp_output</span><span class="o">=</span><span class="s2">&quot;04a_reads_kraken2/</span><span class="si">${</span><span class="nv">base</span><span class="si">}</span><span class="s2">_output.tmp&quot;</span>
-<span class="w">    </span><span class="nv">report</span><span class="o">=</span><span class="s2">&quot;04a_reads_kraken2/</span><span class="si">${</span><span class="nv">base</span><span class="si">}</span><span class="s2">_report.txt&quot;</span>
-<span class="w">    </span><span class="nv">temp_report</span><span class="o">=</span><span class="s2">&quot;04a_reads_kraken2/</span><span class="si">${</span><span class="nv">base</span><span class="si">}</span><span class="s2">_report.tmp&quot;</span>
+<span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$output_dir</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nv">temp_dir</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$output_dir</span><span class="s2">/tmp&quot;</span><span class="w"> </span>
+<span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$temp_dir</span><span class="s2">&quot;</span>
 
-<span class="w">    </span><span class="c1"># Check if output files from previous run exist and are incomplete, then remove them</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$output</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$report</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Incomplete or previous output files found for </span><span class="nv">$base</span><span class="s2">. Removing...&quot;</span>
-<span class="w">        </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$output</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$report</span><span class="s2">&quot;</span>
-<span class="w">    </span><span class="k">fi</span>
-
-<span class="w">    </span><span class="c1"># Run Kraken2 with temporary output files</span>
-<span class="w">    </span>kraken2<span class="w"> </span>--db<span class="w"> </span>/xdisk/kcooper/kcooper/database/Kraken_Special_DB<span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--confidence<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--report-minimizer-data<span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--output<span class="w"> </span><span class="nv">$temp_output</span><span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--paired<span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--report<span class="w"> </span><span class="nv">$temp_report</span><span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--memory-mapping<span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--use-names<span class="w"> </span><span class="se">\</span>
-<span class="w">            </span><span class="nv">$file1</span><span class="w"> </span><span class="se">\</span>
-<span class="w">            </span><span class="nv">$file2</span>
-
-<span class="w">    </span><span class="c1"># Check if Kraken2 ran successfully and rename temporary files</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">        </span>mv<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$temp_output</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$output</span><span class="s2">&quot;</span>
-<span class="w">        </span>mv<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$temp_report</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$report</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="c1"># Properly resolve wildcards before running SPAdes</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">output_dir</span><span class="si">}</span><span class="s2">/spades.log&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Resuming SPAdes assembly for </span><span class="nv">$sample_name</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="nv">cmd</span><span class="o">=</span><span class="s2">&quot;spades.py --meta -o </span><span class="nv">$output_dir</span><span class="s2"> --tmp-dir </span><span class="nv">$temp_dir</span><span class="s2"> --continue&quot;</span>
 <span class="w">    </span><span class="k">else</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Kraken2 failed for </span><span class="nv">$base</span><span class="s2">. Temporary files not renamed.&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Starting new SPAdes assembly for </span><span class="nv">$sample_name</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="nv">cmd</span><span class="o">=</span><span class="s2">&quot;spades.py --meta -k 21,33,55,77 -o </span><span class="nv">$output_dir</span><span class="s2"> --tmp-dir </span><span class="nv">$temp_dir</span><span class="s2"> -1 </span><span class="nv">$f1</span><span class="s2"> -2 </span><span class="nv">$f2</span><span class="s2"> --threads 62&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Running command: </span><span class="nv">$cmd</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nb">eval</span><span class="w"> </span><span class="nv">$cmd</span>
+
+<span class="w">    </span><span class="c1"># Post-assembly cleanup</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">output_dir</span><span class="si">}</span><span class="s2">/contigs.fasta&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Assembly completed successfully for </span><span class="nv">$sample_name</span><span class="s2">. Removing temporary files.&quot;</span>
+<span class="w">        </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$temp_dir</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Assembly incomplete or failed for </span><span class="nv">$sample_name</span><span class="s2">. Retaining files for troubleshooting.&quot;</span>
 <span class="w">    </span><span class="k">fi</span>
 <span class="k">done</span>
 </code></pre></div>
-<h3 id="kr_orange_readsslurm">kr_orange_reads.slurm<a class="headerlink" href="#kr_orange_readsslurm" title="Permanent link">&para;</a></h3>
+<h3 id="orange_assemblyslurm">orange_assembly.slurm<a class="headerlink" href="#orange_assemblyslurm" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="kp">#SBATCH --job-name=kr_orange_reads</span>
+<span class="kp">#SBATCH --job-name=orange_assembly</span>
 <span class="kp">#SBATCH --account=kcooper</span>
 <span class="kp">#SBATCH --partition=standard</span>
 <span class="kp">#SBATCH --nodes=1</span>
-<span class="kp">#SBATCH --ntasks=64</span>
-<span class="kp">#SBATCH --time=24:00:00</span>
-<span class="kp">#SBATCH --mem-per-cpu=20gb</span>
+<span class="kp">#SBATCH --ntasks=62</span>
+<span class="kp">#SBATCH --cpus-per-task=1</span>
+<span class="kp">#SBATCH --time=48:00:00</span>
+<span class="kp">#SBATCH --mem-per-cpu=20gb    </span>
 <span class="kp">#SBATCH --mail-type=ALL</span>
 
-module<span class="w"> </span>load<span class="w"> </span>anaconda/2020
-<span class="nb">source</span><span class="w"> </span>~/.bashrc
-conda<span class="w"> </span>activate<span class="w"> </span>kraken2-env
+module<span class="w"> </span>load<span class="w"> </span>spades
+<span class="nb">cd</span><span class="w"> </span>/xdisk/kcooper/caparicio/tree-fruit/
 
-<span class="nv">DB_PATH</span><span class="o">=</span><span class="s2">&quot;/xdisk/kcooper/kcooper/database/Kraken_Special_DB&quot;</span>
-<span class="nb">cd</span><span class="w"> </span>/xdisk/kcooper/caparicio/tree-fruit
-<span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="s2">&quot;04a_reads_kraken2&quot;</span>
-<span class="nv">INPUT_DIR</span><span class="o">=</span><span class="s2">&quot;01c_fastp_reads&quot;</span>
-<span class="nv">THREADS</span><span class="o">=</span><span class="m">46</span>
-<span class="nv">CONFIDENCE</span><span class="o">=</span><span class="m">0</span>.1
-<span class="nv">REPORT_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="s2">/kraken2_report.txt&quot;</span>
-<span class="nv">CHECKPOINT_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="s2">/checkpoint.txt&quot;</span>
+<span class="nv">files1</span><span class="o">=(</span>01c_fastp_reads/*oranges*_1.trimmed.fastq<span class="o">)</span>
 
-<span class="c1"># Automated cleanup to ensure a clean slate before starting processing</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Cleaning up incomplete files...&quot;</span>
-find<span class="w"> </span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.tmp&#39;</span><span class="w"> </span>-delete
+<span class="k">for</span><span class="w"> </span>f1<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">files1</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nv">f2</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">f1</span><span class="p">/_1.trimmed.fastq/_2.trimmed.fastq</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nv">sample_name</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$f1</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;_1.trimmed.fastq&quot;</span><span class="k">)</span>
+<span class="w">    </span><span class="nv">output_dir</span><span class="o">=</span><span class="s2">&quot;02_assembly/</span><span class="si">${</span><span class="nv">sample_name</span><span class="si">}</span><span class="s2">&quot;</span>
 
-<span class="c1"># Loop through files, skipping those already processed</span>
-<span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="si">${</span><span class="nv">INPUT_DIR</span><span class="si">}</span>/*oranges*1.trimmed.fastq<span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">    </span><span class="nv">file_base</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="nv">$file</span><span class="w"> </span>_1.trimmed.fastq<span class="k">)</span>
+<span class="w">    </span><span class="c1"># Ensure a clean start by cleaning any previous run data</span>
+<span class="w">    </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="si">${</span><span class="nv">output_dir</span><span class="p">:?</span><span class="si">}</span>/*<span class="w">  </span><span class="c1"># Clear directory properly</span>
 
-<span class="w">    </span><span class="c1"># Skip files processed in previous runs</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LAST_PROCESSED</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file_base</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">        </span><span class="k">continue</span>
+<span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$output_dir</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nv">temp_dir</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$output_dir</span><span class="s2">/tmp&quot;</span><span class="w"> </span>
+<span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$temp_dir</span><span class="s2">&quot;</span>
+
+<span class="w">    </span><span class="c1"># Properly resolve wildcards before running SPAdes</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">output_dir</span><span class="si">}</span><span class="s2">/spades.log&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Resuming SPAdes assembly for </span><span class="nv">$sample_name</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="nv">cmd</span><span class="o">=</span><span class="s2">&quot;spades.py --meta -o </span><span class="nv">$output_dir</span><span class="s2"> --tmp-dir </span><span class="nv">$temp_dir</span><span class="s2"> --continue&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Starting new SPAdes assembly for </span><span class="nv">$sample_name</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="nv">cmd</span><span class="o">=</span><span class="s2">&quot;spades.py --meta -k 21,33,55,77 -o </span><span class="nv">$output_dir</span><span class="s2"> --tmp-dir </span><span class="nv">$temp_dir</span><span class="s2"> -1 </span><span class="nv">$f1</span><span class="s2"> -2 </span><span class="nv">$f2</span><span class="s2"> --threads 62&quot;</span>
 <span class="w">    </span><span class="k">fi</span>
 
-<span class="w">    </span><span class="nv">paired_file</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">INPUT_DIR</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">file_base</span><span class="si">}</span><span class="s2">_2.trimmed.fastq&quot;</span>
-<span class="w">    </span><span class="nv">temp_output_file</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="s2">/k2_</span><span class="si">${</span><span class="nv">file_base</span><span class="si">}</span><span class="s2">_output.txt.tmp&quot;</span>
-<span class="w">    </span><span class="nv">temp_report_file</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="s2">/k2_</span><span class="si">${</span><span class="nv">file_base</span><span class="si">}</span><span class="s2">_report.txt.tmp&quot;</span>
-<span class="w">    </span><span class="nv">final_output_file</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="s2">/k2_</span><span class="si">${</span><span class="nv">file_base</span><span class="si">}</span><span class="s2">_output.txt&quot;</span>
-<span class="w">    </span><span class="nv">final_report_file</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="s2">/k2_</span><span class="si">${</span><span class="nv">file_base</span><span class="si">}</span><span class="s2">_report.txt&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Running command: </span><span class="nv">$cmd</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nb">eval</span><span class="w"> </span><span class="nv">$cmd</span>
 
-<span class="w">    </span><span class="c1"># Run Kraken2, directing output to temporary files, including minimizer data in the report</span>
-<span class="w">    </span>kraken2<span class="w"> </span>--db<span class="w"> </span><span class="nv">$DB_PATH</span><span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--paired<span class="w"> </span><span class="nv">$file</span><span class="w"> </span><span class="nv">$paired_file</span><span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--output<span class="w"> </span><span class="nv">$temp_output_file</span><span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--report<span class="w"> </span><span class="nv">$temp_report_file</span><span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--report-minimizer-data<span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--memory-mapping<span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--use-names<span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--threads<span class="w"> </span><span class="nv">$THREADS</span><span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--confidence<span class="w"> </span><span class="nv">$CONFIDENCE</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">{</span>
-<span class="w">        </span>mv<span class="w"> </span><span class="nv">$temp_output_file</span><span class="w"> </span><span class="nv">$final_output_file</span>
-<span class="w">        </span>mv<span class="w"> </span><span class="nv">$temp_report_file</span><span class="w"> </span><span class="nv">$final_report_file</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$file_base</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$CHECKPOINT_FILE</span>
-<span class="w">    </span><span class="o">}</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Kraken 2 processing failed for </span><span class="nv">$file_base</span><span class="s2">. Cleaning up...&quot;</span>
-<span class="w">        </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="nv">$temp_output_file</span><span class="w"> </span><span class="nv">$temp_report_file</span>
-<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span><span class="c1"># Post-assembly cleanup</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">output_dir</span><span class="si">}</span><span class="s2">/contigs.fasta&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Assembly completed successfully for </span><span class="nv">$sample_name</span><span class="s2">. Removing temporary files.&quot;</span>
+<span class="w">        </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$temp_dir</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Assembly incomplete or failed for </span><span class="nv">$sample_name</span><span class="s2">. Retaining files for troubleshooting.&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
 <span class="k">done</span>
-
-<span class="c1"># Concatenate all individual reports into a comprehensive report</span>
-cat<span class="w"> </span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span>/*_report.txt.tmp<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$REPORT_FILE</span>
-
-<span class="c1"># Cleanup checkpoint file and temporary reports after successful run</span>
-rm<span class="w"> </span>-f<span class="w"> </span><span class="nv">$CHECKPOINT_FILE</span>
-rm<span class="w"> </span>-f<span class="w"> </span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span>/*_report.txt.tmp
 </code></pre></div>
-<h3 id="kr_peach_readsslurm">kr_peach_reads.slurm<a class="headerlink" href="#kr_peach_readsslurm" title="Permanent link">&para;</a></h3>
+<h3 id="peach_assemblyslurm">peach_assembly.slurm<a class="headerlink" href="#peach_assemblyslurm" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="kp">#SBATCH --job-name=kr_peach_reads</span>
+<span class="kp">#SBATCH --job-name=peach_assembly</span>
 <span class="kp">#SBATCH --account=kcooper</span>
 <span class="kp">#SBATCH --partition=standard</span>
 <span class="kp">#SBATCH --nodes=1</span>
-<span class="kp">#SBATCH --ntasks=60</span>
-<span class="kp">#SBATCH --time=24:00:00</span>
-<span class="kp">#SBATCH --mem-per-cpu=20gb</span>
+<span class="kp">#SBATCH --ntasks=62</span>
+<span class="kp">#SBATCH --cpus-per-task=1</span>
+<span class="kp">#SBATCH --time=48:00:00</span>
+<span class="kp">#SBATCH --mem-per-cpu=20gb    </span>
 <span class="kp">#SBATCH --mail-type=ALL</span>
 
-module<span class="w"> </span>load<span class="w"> </span>anaconda/2020
-<span class="nb">source</span><span class="w"> </span>~/.bashrc
-conda<span class="w"> </span>activate<span class="w"> </span>kraken2-env
+module<span class="w"> </span>load<span class="w"> </span>spades
+<span class="nb">cd</span><span class="w"> </span>/xdisk/kcooper/caparicio/tree-fruit/
 
-<span class="nv">DB_PATH</span><span class="o">=</span><span class="s2">&quot;/xdisk/kcooper/kcooper/database/Kraken_Special_DB&quot;</span>
-<span class="nb">cd</span><span class="w"> </span>/xdisk/kcooper/caparicio/tree-fruit
-<span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="s2">&quot;04a_reads_kraken2&quot;</span>
-<span class="nv">INPUT_DIR</span><span class="o">=</span><span class="s2">&quot;01c_fastp_reads&quot;</span>
-<span class="nv">THREADS</span><span class="o">=</span><span class="m">46</span>
-<span class="nv">CONFIDENCE</span><span class="o">=</span><span class="m">0</span>.1
-<span class="nv">REPORT_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="s2">/kraken2_report.txt&quot;</span>
-<span class="nv">CHECKPOINT_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="s2">/checkpoint.txt&quot;</span>
+<span class="nv">files1</span><span class="o">=(</span>01c_fastp_reads/*peaches*_1.trimmed.fastq<span class="o">)</span>
 
-<span class="c1"># Automated cleanup to ensure a clean slate before starting processing</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Cleaning up incomplete files...&quot;</span>
-find<span class="w"> </span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.tmp&#39;</span><span class="w"> </span>-delete
+<span class="k">for</span><span class="w"> </span>f1<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">files1</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nv">f2</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">f1</span><span class="p">/_1.trimmed.fastq/_2.trimmed.fastq</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nv">sample_name</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$f1</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;_1.trimmed.fastq&quot;</span><span class="k">)</span>
+<span class="w">    </span><span class="nv">output_dir</span><span class="o">=</span><span class="s2">&quot;02_assembly/</span><span class="si">${</span><span class="nv">sample_name</span><span class="si">}</span><span class="s2">&quot;</span>
 
-<span class="c1"># Loop through files, skipping those already processed</span>
-<span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="si">${</span><span class="nv">INPUT_DIR</span><span class="si">}</span>/*peaches*1.trimmed.fastq<span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">    </span><span class="nv">file_base</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="nv">$file</span><span class="w"> </span>_1.trimmed.fastq<span class="k">)</span>
+<span class="w">    </span><span class="c1"># Ensure a clean start by cleaning any previous run data</span>
+<span class="w">    </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="si">${</span><span class="nv">output_dir</span><span class="p">:?</span><span class="si">}</span>/*<span class="w">  </span><span class="c1"># Clear directory properly</span>
 
-<span class="w">    </span><span class="c1"># Skip files processed in previous runs</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LAST_PROCESSED</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file_base</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">        </span><span class="k">continue</span>
+<span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$output_dir</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nv">temp_dir</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$output_dir</span><span class="s2">/tmp&quot;</span><span class="w"> </span>
+<span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$temp_dir</span><span class="s2">&quot;</span>
+
+<span class="w">    </span><span class="c1"># Properly resolve wildcards before running SPAdes</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">output_dir</span><span class="si">}</span><span class="s2">/spades.log&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Resuming SPAdes assembly for </span><span class="nv">$sample_name</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="nv">cmd</span><span class="o">=</span><span class="s2">&quot;spades.py --meta -o </span><span class="nv">$output_dir</span><span class="s2"> --tmp-dir </span><span class="nv">$temp_dir</span><span class="s2"> --continue&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Starting new SPAdes assembly for </span><span class="nv">$sample_name</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="nv">cmd</span><span class="o">=</span><span class="s2">&quot;spades.py --meta -k 21,33,55,77 -o </span><span class="nv">$output_dir</span><span class="s2"> --tmp-dir </span><span class="nv">$temp_dir</span><span class="s2"> -1 </span><span class="nv">$f1</span><span class="s2"> -2 </span><span class="nv">$f2</span><span class="s2"> --threads 62&quot;</span>
 <span class="w">    </span><span class="k">fi</span>
 
-<span class="w">    </span><span class="nv">paired_file</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">INPUT_DIR</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">file_base</span><span class="si">}</span><span class="s2">_2.trimmed.fastq&quot;</span>
-<span class="w">    </span><span class="nv">temp_output_file</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="s2">/k2_</span><span class="si">${</span><span class="nv">file_base</span><span class="si">}</span><span class="s2">_output.txt.tmp&quot;</span>
-<span class="w">    </span><span class="nv">temp_report_file</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="s2">/k2_</span><span class="si">${</span><span class="nv">file_base</span><span class="si">}</span><span class="s2">_report.txt.tmp&quot;</span>
-<span class="w">    </span><span class="nv">final_output_file</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="s2">/k2_</span><span class="si">${</span><span class="nv">file_base</span><span class="si">}</span><span class="s2">_output.txt&quot;</span>
-<span class="w">    </span><span class="nv">final_report_file</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="s2">/k2_</span><span class="si">${</span><span class="nv">file_base</span><span class="si">}</span><span class="s2">_report.txt&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Running command: </span><span class="nv">$cmd</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nb">eval</span><span class="w"> </span><span class="nv">$cmd</span>
 
-<span class="w">    </span><span class="c1"># Run Kraken2, directing output to temporary files, including minimizer data in the report</span>
-<span class="w">    </span>kraken2<span class="w"> </span>--db<span class="w"> </span><span class="nv">$DB_PATH</span><span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--paired<span class="w"> </span><span class="nv">$file</span><span class="w"> </span><span class="nv">$paired_file</span><span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--output<span class="w"> </span><span class="nv">$temp_output_file</span><span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--report<span class="w"> </span><span class="nv">$temp_report_file</span><span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--report-minimizer-data<span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--memory-mapping<span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--use-names<span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--threads<span class="w"> </span><span class="nv">$THREADS</span><span class="w"> </span><span class="se">\</span>
-<span class="w">            </span>--confidence<span class="w"> </span><span class="nv">$CONFIDENCE</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">{</span>
-<span class="w">        </span>mv<span class="w"> </span><span class="nv">$temp_output_file</span><span class="w"> </span><span class="nv">$final_output_file</span>
-<span class="w">        </span>mv<span class="w"> </span><span class="nv">$temp_report_file</span><span class="w"> </span><span class="nv">$final_report_file</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$file_base</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$CHECKPOINT_FILE</span>
-<span class="w">    </span><span class="o">}</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Kraken 2 processing failed for </span><span class="nv">$file_base</span><span class="s2">. Cleaning up...&quot;</span>
-<span class="w">        </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="nv">$temp_output_file</span><span class="w"> </span><span class="nv">$temp_report_file</span>
-<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span><span class="c1"># Post-assembly cleanup</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">output_dir</span><span class="si">}</span><span class="s2">/contigs.fasta&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Assembly completed successfully for </span><span class="nv">$sample_name</span><span class="s2">. Removing temporary files.&quot;</span>
+<span class="w">        </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$temp_dir</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Assembly incomplete or failed for </span><span class="nv">$sample_name</span><span class="s2">. Retaining files for troubleshooting.&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
 <span class="k">done</span>
-
-<span class="c1"># Concatenate all individual reports into a comprehensive report</span>
-cat<span class="w"> </span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span>/*_report.txt.tmp<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$REPORT_FILE</span>
-
-<span class="c1"># Cleanup checkpoint file and temporary reports after successful run</span>
-rm<span class="w"> </span>-f<span class="w"> </span><span class="nv">$CHECKPOINT_FILE</span>
-rm<span class="w"> </span>-f<span class="w"> </span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span>/*_report.txt.tmp
 </code></pre></div>
 <hr />
 <h2 id="using-mambaconda-in-jupyter">Using Mamba/Conda in Jupyter<a class="headerlink" href="#using-mambaconda-in-jupyter" title="Permanent link">&para;</a></h2>
@@ -1752,7 +1702,7 @@ This Python version accomplishes as the bash script above, but in Jupyter notebo
 </tbody>
 </table>
 <h2 id="bioinformatics-workflow">Bioinformatics Workflow<a class="headerlink" href="#bioinformatics-workflow" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="../assets/flowchart0009.drawio" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="bioinformatics flowchart" src="../assets/flowchart0009.drawio" /></a></p>
+<p><a class="glightbox" href="./assets/flowchart0009.drawio" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="bioinformatics flowchart" src="./assets/flowchart0009.drawio" /></a></p>
 
 
 

@@ -723,11 +723,17 @@
 
 <h1 id="26-april-2024">26 April 2024<a class="headerlink" href="#26-april-2024" title="Permanent link">&para;</a></h1>
 <h2 id="tree-fruit-kraken-2-scripts">Tree Fruit Kraken 2 Scripts<a class="headerlink" href="#tree-fruit-kraken-2-scripts" title="Permanent link">&para;</a></h2>
-<p><a href="https://hpcdocs.static.arizona.edu/running_jobs/batch_jobs/submitting_jobs" target="_blank">Submitting Batch Jobs</a>
-- Open the slurm script directory in the terminal.
-- Submit the script using the <code>sbatch</code> command:
+<p><a href="https://hpcdocs.static.arizona.edu/running_jobs/batch_jobs/submitting_jobs" target="_blank">Submitting Batch Jobs</a></p>
+<ul>
+<li>
+<p>Open the slurm script directory in the terminal.</p>
+</li>
+<li>
+<p>Submit the script using the <code>sbatch</code> command:
 <div class="highlight"><pre><span></span><code>sbatch<span class="w"> </span>kr_orange_reads.slurm
 </code></pre></div></p>
+</li>
+</ul>
 <h3 id="kr_apple_readsslurm">kr_apple_reads.slurm<a class="headerlink" href="#kr_apple_readsslurm" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="kp">#SBATCH --job-name=kr_apple_reads</span>
@@ -1033,12 +1039,14 @@ Note: Ensure that <code>OUTPUT_DIR</code> is set to the correct directory path w
 This Python version accomplishes as the bash script above, but in Jupyter notebook's native Python environment.</p>
 <hr />
 <h2 id="sample-tracker">Sample Tracker<a class="headerlink" href="#sample-tracker" title="Permanent link">&para;</a></h2>
-<p>document$.subscribe(function() {
+<!--
+document$.subscribe(function() {
   var tables = document.querySelectorAll("article table:not([class])")
   tables.forEach(function(table) {
     new Tablesort(table)
   })
-})</p>
+})
+-->
 <table>
 <thead>
 <tr>
@@ -1750,7 +1758,7 @@ This Python version accomplishes as the bash script above, but in Jupyter notebo
 </tbody>
 </table>
 <h2 id="bioinformatics-workflow">Bioinformatics Workflow<a class="headerlink" href="#bioinformatics-workflow" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="../assets/flowchart0009.drawio" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="bioinformatics flowchart" src="../assets/flowchart0009.drawio" /></a></p>
+<p><a class="glightbox" href="../assets/flowchart0009.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="bioinformatics flowchart" src="../assets/flowchart0009.png" /></a></p>
 
 
 
