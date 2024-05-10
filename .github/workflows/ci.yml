@@ -2,8 +2,10 @@ name: ci
 on:
   push:
     branches:
-      - master
-      - main
+      - main  # Focus CI on the main branch
+  pull_request:
+    branches:
+      - main  # Optionally trigger CI on pull requests to main
 permissions:
   contents: write
 jobs:
