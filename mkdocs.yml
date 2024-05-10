@@ -12,7 +12,13 @@ copyright: Copyright © 2024
 plugins:
   - search
   - table-reader
-  - glightbox  
+  - mkdocs-jupyter
+        theme: dark
+        include_source: True
+
+      highlight_extra_classes: "custom-css-classes        
+
+  - glightbox
 
   # INSIDERS=1 mkdocs buildS
   - group:
@@ -91,5 +97,9 @@ extra_javascript:
 nav:
   - Fruit Surface and Soil Microbiome Project: index.md
   - 10 May 2024: 240510.md
+    - Apple metaSPAdes Assembly Jupyter Notebook: ./assets/apple_assembly.ipynb
+    - Orange metaSPAdes Assembly Jupyter Notebook: ./assets/orange_assembly.ipynb
+    - Peach metaSPAdes Assembly Jupyter Notebook: ./assets/peach_assembly.ipynb
+    - Tree Fruit kraken-biom Jupyter Notebook: ./assets/tree_fruit_kraken-biom.ipynb
   - 26 April 2024: 240426.md
 # - date 2: date2.md
