@@ -97,9 +97,11 @@ extra_javascript:
 # Page tree
 nav:
   - Fruit Surface and Soil Microbiome Project: index.md
-  - 10 May 2024: 240510.md
-      - Apple metaSPAdes Assembly Jupyter Notebook: ./assets/apple_assembly.ipynb
-      - Orange metaSPAdes Assembly Jupyter Notebook: ./assets/orange_assembly.ipynb
-      - Peach metaSPAdes Assembly Jupyter Notebook: ./assets/peach_assembly.ipynb
-      - Tree Fruit kraken-biom Jupyter Notebook: ./assets/tree_fruit_kraken-biom.ipynb
+  - 10 May 2024:
+      - Overview: 240510.md
+      - Subpages:
+          - Apple metaSPAdes Assembly Jupyter Notebook: ./assets/apple_assembly.ipynb
+          - Orange metaSPAdes Assembly Jupyter Notebook: ./assets/orange_assembly.ipynb
+          - Peach metaSPAdes Assembly Jupyter Notebook: ./assets/peach_assembly.ipynb
+          - Tree Fruit kraken-biom Jupyter Notebook: ./assets/tree_fruit_kraken-biom.ipynb
   - 26 April 2024: 240426.md
