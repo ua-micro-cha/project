@@ -15,8 +15,9 @@ plugins:
   - mkdocs-jupyter:
       theme: dark
       include_source: True
-
-      highlight_extra_classes: "custom-css-classes        
+      execute_ignore:
+        - "my-secret-files/*.ipynb"
+ 
 
   - glightbox
 
@@ -102,4 +103,3 @@ nav:
     - Peach metaSPAdes Assembly Jupyter Notebook: ./assets/peach_assembly.ipynb
     - Tree Fruit kraken-biom Jupyter Notebook: ./assets/tree_fruit_kraken-biom.ipynb
   - 26 April 2024: 240426.md
-# - date 2: date2.md
