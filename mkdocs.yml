@@ -12,9 +12,9 @@ copyright: Copyright © 2024
 plugins:
   - search
   - table-reader
-  - mkdocs-jupyter
-        theme: dark
-        include_source: True
+  - mkdocs-jupyter:
+      theme: dark
+      include_source: True
 
       highlight_extra_classes: "custom-css-classes        
 
