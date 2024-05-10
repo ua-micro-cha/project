@@ -86,3 +86,13 @@ extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
   - javascripts/tablesort.js
 
+# Page tree
+nav:
+  - Fruit Surface and Soil Microbiome Project: index.md
+  - 10 May 2024: 240509.md
+  - 26 April 2024: 240426.md
+  - date 2: date2.md
+  
+
+  
+
