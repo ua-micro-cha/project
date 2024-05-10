@@ -12,6 +12,7 @@ copyright: Copyright © 2024
 plugins:
   - search
   - table-reader
+   - glightbox  
 
   # INSIDERS=1 mkdocs buildS
   - group:
