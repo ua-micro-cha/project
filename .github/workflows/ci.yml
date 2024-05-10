@@ -11,8 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  # Fetch all history for all branches and tags      
       - uses: actions/setup-python@v4
         with:
           python-version: '3.12.3'  # Ensure this matches the Python version needed
@@ -23,26 +21,5 @@ jobs:
         run: pip list
       - name: Log environment paths
         run: |
-
-stages:
-  - deploy
-
-deploy_job:
-  stage: deploy
-  script:
-    - pip install -r requirements.txt
-    - mkdocs gh-deploy --force
-  variables:
-    GIT_DEPTH: 0  # Fetch all branches and tags        
           echo "Python location: $(which python)"
           echo "MkDocs location: $(which mkdocs)"
-
-pipelines:
-  default:
-    - step:
-        name: Deploy
-        script:
-          - pip install -r requirements.txt
-          - mkdocs gh-deploy --force
-        clone:
-          depth: full  # Ensures the full repository is cloned
