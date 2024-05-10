@@ -13,12 +13,6 @@ plugins:
   - search
   - table-reader
 
-  # CI=1 mkdocs build
-  - group:
-      enabled: !ENV CI
-      plugins:
-        - git-committers
-
   # INSIDERS=1 mkdocs buildS
   - group:
       enabled: !ENV INSIDERS
