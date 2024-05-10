@@ -23,7 +23,8 @@ plugins:
 theme:
   name: material
   icon:
-    logo: material/github  
+    logo: material/github
+  favicon: material/github    
   features:
     - navigation.path
     - navigation.indexes
