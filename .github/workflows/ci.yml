@@ -22,6 +22,8 @@ jobs:
         run: pip install -r requirements.txt  # Install all dependencies
       - name: Install mkdocs-jupyter
         run: pip install mkdocs-jupyter
+      - name: Install glightbox
+        run: pip install mkdocs-glightbox
       - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force --verbose  # Deploy to GitHub Pages with verbose output
       - name: Log installed packages
