@@ -21,7 +21,7 @@ plugins:
 
   # INSIDERS=1 mkdocs buildS
   - group:
-      enabled: !ENVINSIDERS
+      enabled: !ENV INSIDERS
       plugins:
         - optimize
         - privacy
