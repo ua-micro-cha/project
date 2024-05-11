@@ -17,13 +17,11 @@ plugins:
       include_source: True
       execute_ignore:
         - "my-secret-files/*.ipynb"
- 
-
   - glightbox
 
   # INSIDERS=1 mkdocs buildS
   - group:
-      enabled: !ENV INSIDERS
+      enabled: !ENVINSIDERS
       plugins:
         - optimize
         - privacy
