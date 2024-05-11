@@ -16,14 +16,19 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: '3.12.3'  # Ensure this matches the Python version needed
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt  # Install all dependencies
       - name: Install mkdocs-jupyter
-        run: python -m pip install mkdocs-jupyter    
-      - run: python -m pip install --upgrade pip
-      - run: pip install -r requirements.txt  # Install all dependencies
-      - run: mkdocs gh-deploy --force  # Deploy to GitHub Pages
+        run: pip install mkdocs-jupyter
+      - name: Deploy to GitHub Pages
+        run: mkdocs gh-deploy --force --verbose  # Deploy to GitHub Pages with verbose output
       - name: Log installed packages
         run: pip list
       - name: Log environment paths
         run: |
           echo "Python location: $(which python)"
           echo "MkDocs location: $(which mkdocs)"
+    env:
+      PYTHONPATH: ${{ github.workspace }}/site-packages
