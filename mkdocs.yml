@@ -96,8 +96,8 @@ extra_javascript:
 nav:
   - Fruit Surface and Soil Microbiome Project: index.md
   - 10 May 2024:
-      - Overview: 240510.md
-      - Subpages:
+      - Update: 240510.md
+      - Jupyter Notebooks:
           - Apple metaSPAdes Assembly Jupyter Notebook: ./assets/apple_assembly.ipynb
           - Orange metaSPAdes Assembly Jupyter Notebook: ./assets/orange_assembly.ipynb
           - Peach metaSPAdes Assembly Jupyter Notebook: ./assets/peach_assembly.ipynb
