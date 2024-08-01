@@ -95,6 +95,17 @@ extra_javascript:
 # Page tree
 nav:
   - Fruit Surface and Soil Microbiome Project: index.md
+  - 26 July 2024:
+      - Update: 240726.md
+  - 20 July 2024:
+      - Update: 240720.md
+  - 12 July 2024:
+      - Update: 240712.md
+      - Jupyter Notebooks:
+          - Abricate Install Jupyter Notebook: ./assets/abricate_install.ipynb
+          - Abricate Run Jupyter Notebook: ./assets/abricate_run.ipynb
+  - 28 June 2024:
+      - Update: 240628.md
   - 10 May 2024:
       - Update: 240510.md
       - Jupyter Notebooks:
