@@ -1,1 +1,3 @@
-
+[submodule "mkdocs-material"]
+    path = mkdocs-material
+    url = https://github.com/ua-micro-cha/mkdocs-material.git
