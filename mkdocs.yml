@@ -1,0 +1,118 @@
+site_name: UA Micro Cha Project
+site_url: https://ua-micro-cha/github.io/project
+site_description: Raw notes dump
+site_author: Aparicio
+
+repo_name: project
+repo_url: https://github.com/ua-micro-cha/project
+edit_uri: edit/main/docs/
+
+copyright: Copyright © 2024
+
+plugins:
+  - search
+  - table-reader
+  - mkdocs-jupyter:
+      theme: dark
+      include_source: True
+      execute_ignore:
+        - "my-secret-files/*.ipynb"
+  - glightbox
+
+  # INSIDERS=1 mkdocs buildS
+  - group:
+      enabled: !ENV INSIDERS
+      plugins:
+        - optimize
+        - privacy
+
+theme:
+  name: material
+  icon:
+    logo: material/github
+  favicon: images/favicon.png
+  features:
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  palette: 
+    # Palette toggle for dark mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+markdown_extensions:
+  - tables
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
+
+# Page tree
+nav:
+  - Fruit Surface and Soil Microbiome Project: index.md
+  - 15 August 2024:
+      - Update: 240815a.md
+  - 26 July 2024:
+      - Update: 240726.md
+  - 20 July 2024:
+      - Update: 240720.md
+  - 12 July 2024:
+      - Update: 240712.md
+      - Jupyter Notebooks:
+          - Abricate Install Jupyter Notebook: ./assets/abricate_install.ipynb
+          - Abricate Run Jupyter Notebook: ./assets/abricate_run.ipynb
+  - 28 June 2024:
+      - Update: 240628.md
+  - 10 May 2024:
+      - Update: 240510.md
+      - Jupyter Notebooks:
+          - Apple metaSPAdes Assembly Jupyter Notebook: ./assets/apple_assembly.ipynb
+          - Orange metaSPAdes Assembly Jupyter Notebook: ./assets/orange_assembly.ipynb
+          - Peach metaSPAdes Assembly Jupyter Notebook: ./assets/peach_assembly.ipynb
+          - Tree Fruit kraken-biom Jupyter Notebook: ./assets/tree_fruit_kraken-biom.ipynb
+  - 26 April 2024: 240426.md
